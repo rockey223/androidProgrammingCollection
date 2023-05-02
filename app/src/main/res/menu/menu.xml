@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/notification"
+        android:title="Notification"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/item1"
+        android:title="Item 1"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/item2"
+        android:title="Item 1"
+        app:showAsAction="never"
+        >
+        <menu>
+            <item
+                android:title="Sub Item 1"
+                android:id="@+id/subItem1"/>
+            <item
+                android:title="Sub Item 2"
+                android:id="@+id/subItem2"/>
+        </menu>
+    </item>
+
+
+</menu>
