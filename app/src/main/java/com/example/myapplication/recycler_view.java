@@ -25,19 +25,19 @@ public class recycler_view extends AppCompatActivity {
         items.add(new Item("Mone","jhon@gmail.com",R.drawable.c));
         items.add(new Item("Vone","jhon@gmail.com",R.drawable.d));
         items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.a));
         items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.d));
         items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.b));
         items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.c));
         items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.d));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.c));
         items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
-        items.add(new Item("Done","jhon@gmail.com",R.drawable.e));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.b));
+        items.add(new Item("Done","jhon@gmail.com",R.drawable.a));
 
 
 

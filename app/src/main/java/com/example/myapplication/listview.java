@@ -15,7 +15,7 @@ public class listview extends AppCompatActivity {
         setContentView(R.layout.activity_listview3);
 
         listcontainer=findViewById(R.id.listcontainer);
-        String names[] = {"Ram","manchey"};
+        String names[] = {"Ram","Shyam","Hari","Krishna","SIta","Gita"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.listviewlayout,R.id.listItem,names);
         listcontainer.setAdapter(adapter);
 

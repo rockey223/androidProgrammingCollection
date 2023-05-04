@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         dialogBtn = findViewById(R.id.dialogBtn);
         gotoList=findViewById(R.id.gotoList);
         gotorecycler = findViewById(R.id.gotorecycler);
+
+
         dialogBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+//        Go to database page
 
 
 //        to navigate to another page and pass value from text field
