@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     //Button firstPagebtn;
     EditText firstTextBox;
-    Button firstPageSubmitbtn,dialogBtn,gotoList,gotorecycler;
+    Button firstPageSubmitbtn,dialogBtn,gotoList,gotorecycler,gotodatabase;
     TextView holdMenu;
 
 
@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         dialogBtn = findViewById(R.id.dialogBtn);
         gotoList=findViewById(R.id.gotoList);
         gotorecycler = findViewById(R.id.gotorecycler);
+        gotodatabase = findViewById(R.id.gotodatabase);
+
 
 
         dialogBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +77,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 //        Go to database page
-
+        gotodatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(MainActivity.this,daatabase.class);
+                startActivity(i);
+            }
+        });
 
 //        to navigate to another page and pass value from text field
         firstPageSubmitbtn.setOnClickListener(new View.OnClickListener() {

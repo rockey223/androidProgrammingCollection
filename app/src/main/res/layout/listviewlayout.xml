@@ -7,7 +7,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:id="@+id/listItem"
+        android:id="@+id/listItem1"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:id="@+id/listItem2"
         android:layout_marginLeft="10dp"
         />
 
