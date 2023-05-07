@@ -7,21 +7,46 @@
     tools:context=".daatabase"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="40dp"
+        />
+    <EditText
+        android:id="@+id/inputAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Address"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="40dp"
+        />
+    <EditText
+        android:id="@+id/inputPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone Number"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="40dp"
+        />
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/addtodatabase"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="20dp"
         android:text="Add"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/showfromdatabase"
-        android:text="Show"/>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/databasecontainer"
-        />
+        android:layout_marginHorizontal="40dp"
+        android:text="Display all Users"/>
+
+
+
 
 </LinearLayout>

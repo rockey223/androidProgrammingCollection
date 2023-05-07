@@ -4,14 +4,15 @@ package com.example.myapplication.dbHelper;
 
 
 import android.content.ContentValues;
-import android.content.Context;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+import com.example.myapplication.databaseAdapter.DbAdapter;
 import com.example.myapplication.model.User;
 import com.example.myapplication.params.Params;
 
@@ -22,7 +23,7 @@ import java.util.List;
 public class DbHelper extends SQLiteOpenHelper {
 
 
-public DbHelper (Context context){
+public DbHelper(Context context){
     super(context, Params.DATABASE_NAME,null,Params.DATABASE_VERSION);
 }
 @Override

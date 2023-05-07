@@ -2,29 +2,23 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
-import android.widget.ArrayAdapter;
+
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.dbHelper.DbHelper;
 import com.example.myapplication.model.User;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class daatabase extends AppCompatActivity {
-Button addtodatabase,showfromdatabase;
-    ListView databasecontainer;
+    Button addtodatabase,showfromdatabase;
+    EditText inputName,inputAddress,inputPhone;
 
-    ArrayList<String> _name = new ArrayList<>();
-    ArrayList<String> _id = new ArrayList<>();
-    ArrayList<String> _address = new ArrayList<>();
 
 
     @Override
@@ -32,26 +26,46 @@ Button addtodatabase,showfromdatabase;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daatabase);
 
+
+        inputName = findViewById(R.id.inputName);
+        inputAddress = findViewById(R.id.inputAddress);
+        inputPhone = findViewById(R.id.inputPhone);
         addtodatabase = findViewById(R.id.addtodatabase);
         showfromdatabase = findViewById(R.id.showfromdatabase);
 
         DbHelper db = new DbHelper(daatabase.this);
 
 //adding user in database
-        User hari = new User();
-        hari.setName("prashant");
-        hari.setAddress("sunakothi");
-        hari.setPhone("9864221478");
+        addtodatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        db.addUser(hari);
-        Log.d("dbPrashant", "onCreate: " + hari.getId());
+                String Name = inputName.getText().toString();
+                String Address = inputAddress.getText().toString();
+                String Phone = inputPhone.getText().toString();
 
+                User add = new User();
+                add.setName(Name);
+                add.setAddress(Address);
+                add.setPhone(Phone);
+
+
+                db.addUser(add);
+                inputName.setText("");
+                        inputAddress.setText("");
+                inputPhone.setText("");
+                Toast.makeText(daatabase.this, "Data Added", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+//
 //        updating data in database
-        hari.setId(12);
-        hari.setName("Ramlaal");
-        db.updateUser(hari);
-        int affectedRows = db.updateUser(hari);
-        Log.d("dbPrashant", "updated: " + affectedRows);
+//        hari.setId(12);
+//        hari.setName("Ramlaal");
+//        db.updateUser(hari);
+//        int affectedRows = db.updateUser(hari);
+//        Log.d("dbPrashant", "updated: " + affectedRows);
 
 //        deleting data from db
 //        db.deleteUserById(11);
@@ -59,17 +73,25 @@ Button addtodatabase,showfromdatabase;
 
 
 //        getting all contact
-        List<User> allUser = db.getAllUser();
-        for(User user:allUser){
 
-            Log.d("dbPrashant", "id: " + user.getId() +
-                    "name: " + user.getName());
+//        Log.d("dbPrashant", "onCreate: "+ userList);
 
-        }
+//        using recycler view
+
+
+        showfromdatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(daatabase.this,displayAllUser.class);
+
+                startActivity(i);
+            }
+        });
 
 
 //        count
-        Log.d("dbPrashant", "total record: " + db.getCount());
+//        Log.d("dbPrashant", "total record: " + db.getCount());
+
 
 
 
