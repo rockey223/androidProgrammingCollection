@@ -99,6 +99,7 @@ public void deleteUserById(int id){
     SQLiteDatabase db = this.getWritableDatabase();
     db.delete(Params.TABLE_NAME,Params.ID + "=?",new String[]{String.valueOf(id)});
     db.close();
+
 }
 
 

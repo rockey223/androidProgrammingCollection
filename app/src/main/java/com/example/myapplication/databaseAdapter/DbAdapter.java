@@ -2,6 +2,9 @@ package com.example.myapplication.databaseAdapter;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+
 import com.example.myapplication.dbHelper.DbHelper;
+import com.example.myapplication.displayAllUser;
 import com.example.myapplication.model.User;
+import com.example.myapplication.params.Params;
 
 import java.util.List;
 
@@ -33,7 +39,7 @@ public class DbAdapter extends RecyclerView.Adapter<DbAdapter.ViewHolder> {
     @NonNull
     @Override
     public DbAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dbuserlayout,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dbuserlayout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -45,7 +51,6 @@ public class DbAdapter extends RecyclerView.Adapter<DbAdapter.ViewHolder> {
         holder.userAddress.setText(user.getAddress());
         holder.userPhone.setText(user.getPhone());
         holder.dbDelete.setImageResource(R.drawable.delete);
-
     }
 
     @Override
@@ -53,7 +58,7 @@ public class DbAdapter extends RecyclerView.Adapter<DbAdapter.ViewHolder> {
         return userList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView userName;
         public TextView userAddress;
@@ -63,28 +68,57 @@ public class DbAdapter extends RecyclerView.Adapter<DbAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
             id = itemView.findViewById(R.id.dbId);
             userName = itemView.findViewById(R.id.dbuserName);
             userAddress = itemView.findViewById(R.id.dbuserAddress);
             userPhone = itemView.findViewById(R.id.dbPhone);
             dbDelete = itemView.findViewById(R.id.dbDelete);
 
-
+            dbDelete.setOnClickListener(this);
 
         }
-
 
 
         @Override
         public void onClick(View v) {
+            int position = getAbsoluteAdapterPosition();
+            delete(position);
 
 
+//            User user = userList.get(position);
+//            int id = user.getId();
+//            DbHelper db =new DbHelper(context);
+//            db.deleteUserById(id);
+////            Intent refresh = new Intent(context, ViewHolder.class);
+//            notifyDataSetChanged();
+//            Intent refresh = new Intent(context, displayAllUser.class);
+//            context.startActivity(refresh);
 
-//            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
-            Log.d("dbPrashantClick", "clicked");
+
+//            Toast.makeText(context, "clicked" + String.valueOf(position) + "name: " + id, Toast.LENGTH_SHORT).show();
         }
-    }
+        public void delete(int position) {
+            User user = userList.get(position);
+            int id = user.getId();
+            DbHelper db =new DbHelper(context);
+            db.deleteUserById(id);
+            userList.remove(position);
 
+            // Notify the adapter that the item has been removed
+            notifyItemRemoved(position);
+
+            // Display a toast message
+            Toast.makeText(context, "User deleted", Toast.LENGTH_SHORT).show();
+
+
+        }
+
+
+    }
+//
 
 }
+
+
+

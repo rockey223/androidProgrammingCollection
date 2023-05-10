@@ -53,9 +53,10 @@ public class displayAllUser extends AppCompatActivity {
 
         }
 
-        DbAdapter = new DbAdapter(displayAllUser.this,userList);
+        DbAdapter adapter = new DbAdapter(displayAllUser.this,userList);
 
-        databaseList.setAdapter(DbAdapter);
+        databaseList.setAdapter(adapter);
+
 
     }
 }

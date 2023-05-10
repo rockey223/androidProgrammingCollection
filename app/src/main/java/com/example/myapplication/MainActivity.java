@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     //Button firstPagebtn;
     EditText firstTextBox;
-    Button firstPageSubmitbtn,dialogBtn,gotoList,gotorecycler,gotodatabase;
+    Button firstPageSubmitbtn,dialogBtn,gotoList,gotorecycler,gotodatabase,gotoapi;
     TextView holdMenu;
 
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         gotoList=findViewById(R.id.gotoList);
         gotorecycler = findViewById(R.id.gotorecycler);
         gotodatabase = findViewById(R.id.gotodatabase);
+        gotoapi = findViewById(R.id.gotoapi);
 
 
 
@@ -81,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(MainActivity.this,daatabase.class);
+                startActivity(i);
+            }
+        });
+
+        gotoapi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Api.class);
                 startActivity(i);
             }
         });
